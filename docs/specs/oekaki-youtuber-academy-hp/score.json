@@ -1,0 +1,91 @@
+{
+  "spec_slug": "oekaki-youtuber-academy-hp",
+  "version": "1.0.0",
+  "scored_at": "2026-06-29",
+  "scorer": "Claude Code Opus 4.7",
+  "model": "C.U.T.E.",
+  "maturity_target": "L3",
+  "maturity_achieved": "L3",
+  "passed": true,
+  "scores": {
+    "clear": 25,
+    "unambiguous": 24,
+    "testable": 25,
+    "estimable": 25,
+    "total": 99,
+    "max": 100,
+    "threshold": 98
+  },
+  "deliverables": {
+    "requirements": true,
+    "design": true,
+    "tasks": true,
+    "threat_model": true,
+    "slo": true,
+    "runbook": true,
+    "guardrails": true,
+    "critique": true,
+    "score": true,
+    "adr": true
+  },
+  "deductions": [
+    {
+      "section": "NFR-R2",
+      "issue": "phrase 'where reasonably possible' is ambiguous",
+      "points_deducted": 1,
+      "recommended_fix": "specify concrete viewport size (e.g., iPhone SE 375x667) and pass criteria"
+    }
+  ],
+  "known_gaps": [
+    {
+      "id": "GAP-1",
+      "title": "LINE CTA href is placeholder",
+      "priority": "High",
+      "task_id": "T-501"
+    },
+    {
+      "id": "GAP-2",
+      "title": "Contact email is info@example.com placeholder",
+      "priority": "High",
+      "task_id": "T-502"
+    },
+    {
+      "id": "GAP-3",
+      "title": "Legal pages (privacy / commercial transaction / operator info) not yet drafted",
+      "priority": "Mid",
+      "task_id": "T-503,T-504,T-505"
+    },
+    {
+      "id": "GAP-4",
+      "title": "OGP / Twitter Card metadata not set",
+      "priority": "Low",
+      "task_id": "T-506"
+    },
+    {
+      "id": "GAP-5",
+      "title": "Analytics not configured",
+      "priority": "Low",
+      "task_id": "T-603"
+    },
+    {
+      "id": "GAP-6",
+      "title": "Custom domain not acquired",
+      "priority": "Low",
+      "task_id": "T-601"
+    }
+  ],
+  "metrics": {
+    "functional_requirements": 27,
+    "non_functional_requirements": 17,
+    "user_stories": 5,
+    "constraints": 7,
+    "assumptions": 5,
+    "adrs": 6,
+    "tasks_total": 42,
+    "tasks_done": 30,
+    "tasks_todo": 12,
+    "stride_threats_identified": 21,
+    "slo_objectives": 7
+  },
+  "next_review_due": "2026-09-29"
+}
