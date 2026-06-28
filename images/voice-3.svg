@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8f5e0"/>
+      <stop offset="100%" stop-color="#b8d8a8"/>
+    </linearGradient>
+    <linearGradient id="skin3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fce4c8"/>
+      <stop offset="100%" stop-color="#e6c39a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#bg3)"/>
+  <path d="M 65 75 Q 65 50 100 50 Q 135 50 135 75 Q 135 85 130 90 L 130 105 Q 125 115 100 115 Q 75 115 70 105 L 70 90 Q 65 85 65 75 Z" fill="#2a1810"/>
+  <ellipse cx="100" cy="115" rx="33" ry="38" fill="url(#skin3)"/>
+  <ellipse cx="88" cy="112" rx="2.5" ry="4" fill="#2a1810"/>
+  <ellipse cx="112" cy="112" rx="2.5" ry="4" fill="#2a1810"/>
+  <path d="M 90 128 Q 100 132 110 128" stroke="#a04030" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="82" cy="120" r="3" fill="#f4a890" opacity="0.6"/>
+  <circle cx="118" cy="120" r="3" fill="#f4a890" opacity="0.6"/>
+  <!-- 看護師の白い服 -->
+  <path d="M 60 158 Q 65 148 100 148 Q 135 148 140 158 L 145 200 L 55 200 Z" fill="#ffffff"/>
+  <!-- 襟元のV -->
+  <path d="M 90 148 L 100 165 L 110 148" stroke="#d0d0d0" stroke-width="1" fill="none"/>
+</svg>

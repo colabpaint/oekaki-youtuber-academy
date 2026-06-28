@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>装飾・POP・イラスト系フォント比較 ｜ ポスカアート講座LP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Reggae+One&family=Yusei+Magic&family=Hachi+Maru+Pop&family=RocknRoll+One&family=Train+One&family=Stick&family=DotGothic16&family=Yuji+Boku&family=Kaisei+Decol:wght@500;700&family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@500;800&family=Zen+Kaku+Gothic+New:wght@900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #faf6ee;
+    --ink: #1a1612;
+    --ink-sub: #6b6359;
+    --line: #e5dcc9;
+    --orange: #f08a3c;
+    --orange-light: #fbb86b;
+    --orange-dark: #c46322;
+    --black: #1a1a1a;
+    --highlight: #ffe88a;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    padding: 32px 16px 80px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 32px 24px;
+    background: white;
+    border: 1px solid var(--line);
+  }
+  .page-header h1 {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--orange-dark);
+  }
+  .page-header p {
+    color: var(--ink-sub);
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .page-header .note {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: var(--bg);
+    font-size: 13px;
+    color: var(--ink);
+    border-left: 3px solid var(--orange);
+    text-align: left;
+  }
+
+  /* 案 */
+  .case {
+    background: white;
+    border: 1px solid var(--line);
+    margin-bottom: 40px;
+    overflow: hidden;
+    padding-bottom: 24px;
+  }
+  .case-header {
+    background: linear-gradient(135deg, #fff5e6, #ffe9c8);
+    padding: 18px 28px;
+    border-bottom: 2px solid var(--orange);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .case-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: var(--orange-dark);
+  }
+  .case-title {
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .case-recommend {
+    background: var(--orange-dark);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    letter-spacing: 0.12em;
+  }
+  .case-meta {
+    font-size: 12px;
+    color: var(--ink-sub);
+    margin-left: auto;
+  }
+
+  .case-body {
+    padding: 32px 28px 8px;
+  }
+
+  /* ロゴサンプル */
+  .logo-sample {
+    text-align: center;
+    padding: 32px 16px;
+    background: var(--bg);
+    margin-bottom: 16px;
+    border: 1px dashed var(--line);
+  }
+  .logo-sample .logo {
+    display: inline-block;
+    font-size: 48px;
+    line-height: 1;
+  }
+  .logo-sample .sub {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--ink-sub);
+    letter-spacing: 0.2em;
+  }
+
+  /* ヘッドラインサンプル */
+  .headline-sample {
+    text-align: center;
+    padding: 32px 16px;
+    background: white;
+    border: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
+  .headline-sample .h {
+    font-size: 52px;
+    line-height: 1.3;
+  }
+  .headline-sample .h .marker {
+    background: linear-gradient(transparent 62%, var(--highlight) 62%, var(--highlight) 92%, transparent 92%);
+    padding: 0 6px;
+  }
+
+  /* fv045風の装飾ロゴ（CSS再現） */
+  .deco-logo-fv045 {
+    text-align: center;
+    padding: 60px 20px;
+    background:
+      radial-gradient(circle at 30% 40%, #ffd699 0%, transparent 40%),
+      radial-gradient(circle at 70% 60%, #ffb380 0%, transparent 40%),
+      linear-gradient(180deg, var(--orange-light), var(--orange));
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .deco-logo-fv045::before {
+    content: "";
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; bottom: 10%;
+    background: radial-gradient(circle at 20% 30%, white 1px, transparent 2px),
+                radial-gradient(circle at 80% 60%, white 1px, transparent 2px),
+                radial-gradient(circle at 50% 80%, white 1.5px, transparent 2.5px),
+                radial-gradient(circle at 30% 70%, white 1px, transparent 2px),
+                radial-gradient(circle at 90% 20%, white 1px, transparent 2px),
+                radial-gradient(circle at 15% 50%, white 1px, transparent 2px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .deco-logo-fv045 .text {
+    position: relative;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 56px;
+    line-height: 1.15;
+    color: white;
+    text-shadow:
+      -3px -3px 0 var(--black),
+      3px -3px 0 var(--black),
+      -3px 3px 0 var(--black),
+      3px 3px 0 var(--black),
+      0 6px 0 var(--orange-dark);
+    transform: rotate(-2deg);
+    letter-spacing: -0.02em;
+  }
+  .deco-logo-fv045 .sub {
+    position: relative;
+    margin-top: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 0.15em;
+    text-shadow: 2px 2px 0 var(--black);
+    display: inline-block;
+    transform: rotate(-2deg);
+  }
+
+  /* 解説 */
+  .explanation {
+    padding: 16px 20px;
+    background: #fafafa;
+    border-left: 3px solid var(--orange);
+    font-size: 12px;
+    line-height: 1.85;
+    color: var(--ink-sub);
+  }
+  .explanation strong { color: var(--ink); }
+
+  /* 各案フォント割り当て */
+  .case-yusei .logo, .case-yusei .h { font-family: 'Yusei Magic', sans-serif; }
+  .case-dela .logo, .case-dela .h { font-family: 'Dela Gothic One', sans-serif; }
+  .case-reggae .logo, .case-reggae .h { font-family: 'Reggae One', sans-serif; }
+  .case-rocknroll .logo, .case-rocknroll .h { font-family: 'RocknRoll One', sans-serif; }
+  .case-hachimaru .logo, .case-hachimaru .h { font-family: 'Hachi Maru Pop', sans-serif; }
+  .case-train .logo, .case-train .h { font-family: 'Train One', sans-serif; }
+  .case-stick .logo, .case-stick .h { font-family: 'Stick', sans-serif; }
+  .case-kaisei .logo, .case-kaisei .h { font-family: 'Kaisei Decol', serif; font-weight: 700; }
+  .case-shippori .logo, .case-shippori .h { font-family: 'Shippori Mincho B1', serif; font-weight: 800; }
+  .case-dot .logo, .case-dot .h { font-family: 'DotGothic16', sans-serif; }
+  .case-current .logo, .case-current .h { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; letter-spacing: -0.025em; }
+
+  /* "U" のサイズ調整 */
+  .logo-sample .logo small { font-size: 0.6em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="page-header">
+    <h1>装飾・POP・イラスト系フォント案</h1>
+    <p>
+      「商材の世界観を表現するフォント」を10案＋fv045風カスタム装飾の計11案を提示します。<br>
+      各案で「ロゴ」と「ヘッドライン」を実物で比較できます。
+    </p>
+    <div class="note">
+      <strong>これまでの反省</strong>: 私は「真面目で正統派」のフォント（Noto Sans/Zen Kaku/Klee）に偏っていました。商材が「ポスカアート」=「絵・色・遊び心・マーカー」であるなら、フォント自体がその世界観を表現すべきです。
+    </div>
+  </div>
+
+  <!-- ===== 0. 比較基準: 現在のZen Kaku Gothic New ===== -->
+  <div class="case case-current">
+    <div class="case-header">
+      <span class="case-tag">CASE 0</span>
+      <span class="case-title">比較基準: 現在のZen Kaku Gothic New（前回提案）</span>
+      <span class="case-meta">真面目・正統派</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>印象</strong>: 真面目・正統派ビジネス・キレあり。<br>
+        <strong>商材との親和性</strong>: ポスカ感ゼロ。「絵・色・遊び心」が伝わらない。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 推奨: Yusei Magic ===== -->
+  <div class="case case-yusei">
+    <div class="case-header">
+      <span class="case-tag">CASE 1</span>
+      <span class="case-title">Yusei Magic（油性マーカー手書き）</span>
+      <span class="case-recommend">最有力推奨</span>
+      <span class="case-meta">商材100%マッチ</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: <strong>「油性マーカーで書いたような手書き風」</strong>がコンセプト。親しみやすさとかわいさを兼ね備える。カフェメニュー・POPデザインに使われる。<br>
+        <strong>商材との親和性</strong>: <strong>「ポスカ=マーカー」</strong>と完全一致。商材名と書体コンセプトが一致する稀有な例。<br>
+        <strong>マーケ効果</strong>: ロゴを見ただけで「これはマーカーアート系の商材だ」と一瞬で伝わる。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Dela Gothic One ===== -->
+  <div class="case case-dela">
+    <div class="case-header">
+      <span class="case-tag">CASE 2</span>
+      <span class="case-title">Dela Gothic One（超極太装飾・力強い）</span>
+      <span class="case-meta">インパクト最大</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 超極太ゴシック・横長で安定感・タイトル/キャッチコピー向き。インパクト重視。<br>
+        <strong>商材との親和性</strong>: ストリート/スポーティ寄り（スニーカー文化的）。アート性は中。<br>
+        <strong>マーケ効果</strong>: 視認性最強・YouTuberサムネ風のキレ。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Reggae One ===== -->
+  <div class="case case-reggae">
+    <div class="case-header">
+      <span class="case-tag">CASE 3</span>
+      <span class="case-title">Reggae One（手書き感・躍動感）</span>
+      <span class="case-meta">エネルギッシュ</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 各ストロークに手書き感、躍動感、動きのあるWebページの見出しに最適。<br>
+        <strong>商材との親和性</strong>: 「絵を描く動き」を感じる手書き感が高い。<br>
+        <strong>マーケ効果</strong>: ロックフェス的な熱量・自由さを伝える。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RocknRoll One ===== -->
+  <div class="case case-rocknroll">
+    <div class="case-header">
+      <span class="case-tag">CASE 4</span>
+      <span class="case-title">RocknRoll One（ロック調・若者向け）</span>
+      <span class="case-meta">スポーティ</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 太く骨太なロック調・若者向け。<br>
+        <strong>商材との親和性</strong>: スニーカーアート・ストリート寄り。ポスカアートは「絵」要素強いのでミスマッチ可能性。<br>
+        <strong>マーケ効果</strong>: 若年層・男性ターゲットに強い。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Hachi Maru Pop ===== -->
+  <div class="case case-hachimaru">
+    <div class="case-header">
+      <span class="case-tag">CASE 5</span>
+      <span class="case-title">Hachi Maru Pop（かわいい丸文字POP）</span>
+      <span class="case-meta">親しみ最大</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 女子高生風の丸文字。かわいさ・親しみ。<br>
+        <strong>商材との親和性</strong>: 「子供と一緒に描く」「ママさん向け」のペルソナに合う。<br>
+        <strong>マーケ効果</strong>: 親しみやすさ最大・主婦/ママ層に刺さる。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Stick ===== -->
+  <div class="case case-stick">
+    <div class="case-header">
+      <span class="case-tag">CASE 6</span>
+      <span class="case-title">Stick（細線・装飾文字）</span>
+      <span class="case-meta">クール</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 細い直線のみで構成された装飾文字。モダン・幾何学的。<br>
+        <strong>商材との親和性</strong>: アートデザイン系・幾何学的アートには合うが、ポスカアート（手描き）とは温度差。<br>
+        <strong>マーケ効果</strong>: 個性的・若手アーティスト風。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Kaisei Decol ===== -->
+  <div class="case case-kaisei">
+    <div class="case-header">
+      <span class="case-tag">CASE 7</span>
+      <span class="case-title">Kaisei Decol（装飾セリフ）</span>
+      <span class="case-meta">レトロ装飾</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 装飾的セリフ・レトロ感のある明朝系。<br>
+        <strong>商材との親和性</strong>: 大正ロマン・喫茶店風になる。ポスカ商材とミスマッチ。<br>
+        <strong>マーケ効果</strong>: 個性的だが商材イメージとずれる。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Shippori Mincho B1 ===== -->
+  <div class="case case-shippori">
+    <div class="case-header">
+      <span class="case-tag">CASE 8</span>
+      <span class="case-title">Shippori Mincho B1（オールド明朝・極太）</span>
+      <span class="case-meta">上品老舗</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 築地活版製造所インスパイアの極太明朝。本格的・老舗感。<br>
+        <strong>商材との親和性</strong>: 美術館・画廊風で品格はあるが、副業講座とミスマッチ。<br>
+        <strong>マーケ効果</strong>: 高級感・「本物のアーティスト」感。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DotGothic16 ===== -->
+  <div class="case case-dot">
+    <div class="case-header">
+      <span class="case-tag">CASE 9</span>
+      <span class="case-title">DotGothic16（ピクセル・ゲーム風）</span>
+      <span class="case-meta">レトロゲーム</span>
+    </div>
+    <div class="case-body">
+      <div class="logo-sample">
+        <span class="logo">Posca Art <small>U</small></span>
+        <span class="sub">講師のロゴ</span>
+      </div>
+      <div class="headline-sample">
+        <div class="h">好きなことを、<br><span class="marker">仕事にする。</span></div>
+      </div>
+      <div class="explanation">
+        <strong>フォント特性</strong>: 16ビット風ピクセルフォント。レトロゲーム感。<br>
+        <strong>商材との親和性</strong>: アート性はあるが「ドット絵」イメージで、ポスカ（マーカー）とずれ。<br>
+        <strong>マーケ効果</strong>: 若年男性・ゲーマー層には刺さるが、メインペルソナと外れる。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== fv045 完全装飾再現 ===== -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-tag">CASE 10</span>
+      <span class="case-title">fv045風カスタム装飾ロゴ（CSS再現）</span>
+      <span class="case-recommend">商業ガチ</span>
+      <span class="case-meta">Dela Gothic One+装飾</span>
+    </div>
+    <div class="case-body">
+      <div class="deco-logo-fv045">
+        <div class="text">POSCA<br>ART U</div>
+        <div class="sub">POSCA ART</div>
+      </div>
+      <div class="explanation">
+        <strong>仕組み</strong>: ベースフォント=Dela Gothic One／<strong>白文字＋黒太縁取り（text-shadow 4方向 + 6px下影）＋オレンジ背景＋スパッタ装飾＋少し傾き</strong>。fv045の「スニーカーペイント副業」ロゴと同じCSSパターン。<br>
+        <strong>商材との親和性</strong>: ストリートアート・スポーティ・YouTubeサムネ的。<br>
+        <strong>マーケ効果</strong>: fv045と完全に同じ商業ガチ感を再現。広告流入直後の視覚衝撃が最強。
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

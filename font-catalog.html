@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Fonts 日本語フォント完全カタログ ｜ ポスカアートLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts: 日本語装飾系全カテゴリ -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@400;700;900&family=M+PLUS+1:wght@400;700;900&family=M+PLUS+1p:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Zen+Kaku+Gothic+Antique:wght@400;700;900&family=Zen+Maru+Gothic:wght@400;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Zen+Antique&family=Zen+Antique+Soft&family=Kaisei+Decol:wght@400;700&family=Kaisei+HarunoUmi:wght@400;700&family=Kaisei+Opti:wght@400;700&family=Kaisei+Tokumin:wght@400;700&family=Klee+One:wght@400;600&family=Shippori+Mincho:wght@400;700;800&family=Shippori+Mincho+B1:wght@400;700;800&family=Shippori+Antique&family=Shippori+Antique+B1&family=Hina+Mincho&family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&family=BIZ+UDMincho:wght@400;700&family=Sawarabi+Gothic&family=Sawarabi+Mincho&family=Kosugi&family=Kosugi+Maru&family=Murecho:wght@400;700;900&family=Dela+Gothic+One&family=Reggae+One&family=Yusei+Magic&family=Hachi+Maru+Pop&family=Train+One&family=RocknRoll+One&family=Stick&family=DotGothic16&family=Mochiy+Pop+One&family=Mochiy+Pop+P+One&family=Yuji+Boku&family=Yuji+Mai&family=Yuji+Syuku&family=Slackside+One&family=New+Tegomin&family=Potta+One&family=Cherry+Bomb+One&family=Hi+Melody&family=Honk&family=Kaushan+Script&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #fbf7ed;
+    --ink: #1a1612;
+    --ink-sub: #6b6359;
+    --line: #e5dcc9;
+    --orange: #f08a3c;
+    --orange-dark: #c46322;
+    --highlight: #ffe88a;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    padding: 24px 16px 100px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* ヘッダー */
+  .page-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 32px 24px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .page-header h1 {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 36px;
+    color: var(--orange-dark);
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    color: var(--ink-sub);
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  /* カテゴリ見出し */
+  .category {
+    margin: 40px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%);
+    color: white;
+    border-radius: 4px;
+  }
+  .category .num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    margin-right: 12px;
+    font-size: 14px;
+  }
+  .category .name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+  .category .desc {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+
+  /* フォントカード */
+  .font-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .font-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 20px 24px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .font-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-color: var(--orange);
+  }
+  .font-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted var(--line);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .font-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: var(--orange-dark);
+  }
+  .font-tag {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    color: var(--ink-sub);
+    background: var(--bg);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* プレビュー文 */
+  .preview-logo {
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .preview-catch {
+    font-size: 32px;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .preview-catch .marker {
+    background: linear-gradient(transparent 60%, var(--highlight) 60%, var(--highlight) 90%, transparent 90%);
+    padding: 0 4px;
+  }
+  .preview-body {
+    font-size: 14px;
+    color: var(--ink-sub);
+    margin-top: 8px;
+  }
+  .preview-num {
+    font-size: 24px;
+    color: var(--orange);
+    margin-top: 4px;
+    font-weight: 700;
+  }
+
+  /* おすすめバッジ */
+  .badge {
+    display: inline-block;
+    background: var(--orange-dark);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 3px 8px;
+    letter-spacing: 0.1em;
+    margin-left: 6px;
+    border-radius: 2px;
+    vertical-align: 2px;
+  }
+  .badge.must { background: #d8472f; }
+  .badge.good { background: var(--orange-dark); }
+  .badge.ok { background: #6b9847; }
+
+  /* インデックス */
+  .index {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+  }
+  .index h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--orange-dark);
+  }
+  .index-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 6px 16px;
+    font-size: 12px;
+  }
+  .index-list a {
+    color: var(--ink);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .index-list a:hover { color: var(--orange-dark); }
+
+  /* ===== フォント別個別設定 ===== */
+  .f-notosans .preview-logo, .f-notosans .preview-catch { font-family: 'Noto Sans JP', sans-serif; font-weight: 900; }
+  .f-notosans .preview-body { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; }
+  .f-notosans .preview-num { font-family: 'Noto Sans JP', sans-serif; font-weight: 900; }
+
+  .f-notoserif .preview-logo, .f-notoserif .preview-catch { font-family: 'Noto Serif JP', serif; font-weight: 900; }
+  .f-notoserif .preview-body { font-family: 'Noto Serif JP', serif; font-weight: 400; }
+
+  .f-mplus1 .preview-logo, .f-mplus1 .preview-catch { font-family: 'M PLUS 1', sans-serif; font-weight: 900; }
+  .f-mplus1 .preview-body { font-family: 'M PLUS 1', sans-serif; font-weight: 500; }
+
+  .f-mplus1p .preview-logo, .f-mplus1p .preview-catch { font-family: 'M PLUS 1p', sans-serif; font-weight: 900; }
+  .f-mplus1p .preview-body { font-family: 'M PLUS 1p', sans-serif; font-weight: 500; }
+
+  .f-mplusround .preview-logo, .f-mplusround .preview-catch { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 900; }
+  .f-mplusround .preview-body { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 500; }
+
+  .f-zenkaku .preview-logo, .f-zenkaku .preview-catch { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; letter-spacing: -0.02em; }
+  .f-zenkaku .preview-body { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 500; }
+
+  .f-zenkakuant .preview-logo, .f-zenkakuant .preview-catch { font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; }
+  .f-zenkakuant .preview-body { font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 500; }
+
+  .f-zenmaru .preview-logo, .f-zenmaru .preview-catch { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 900; }
+  .f-zenmaru .preview-body { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 500; }
+
+  .f-zenold .preview-logo, .f-zenold .preview-catch { font-family: 'Zen Old Mincho', serif; font-weight: 900; }
+  .f-zenold .preview-body { font-family: 'Zen Old Mincho', serif; font-weight: 500; }
+
+  .f-zenantique .preview-logo, .f-zenantique .preview-catch { font-family: 'Zen Antique', serif; }
+  .f-zenantique .preview-body { font-family: 'Zen Antique', serif; }
+
+  .f-zenantiquesoft .preview-logo, .f-zenantiquesoft .preview-catch { font-family: 'Zen Antique Soft', serif; }
+
+  .f-kaiseidecol .preview-logo, .f-kaiseidecol .preview-catch { font-family: 'Kaisei Decol', serif; font-weight: 700; }
+  .f-kaiseiharu .preview-logo, .f-kaiseiharu .preview-catch { font-family: 'Kaisei HarunoUmi', serif; font-weight: 700; }
+  .f-kaiseiopti .preview-logo, .f-kaiseiopti .preview-catch { font-family: 'Kaisei Opti', serif; font-weight: 700; }
+  .f-kaiseitoku .preview-logo, .f-kaiseitoku .preview-catch { font-family: 'Kaisei Tokumin', serif; font-weight: 700; }
+
+  .f-klee .preview-logo, .f-klee .preview-catch { font-family: 'Klee One', serif; font-weight: 600; }
+  .f-klee .preview-body { font-family: 'Klee One', serif; font-weight: 400; }
+
+  .f-shippori .preview-logo, .f-shippori .preview-catch { font-family: 'Shippori Mincho', serif; font-weight: 800; }
+  .f-shipporib1 .preview-logo, .f-shipporib1 .preview-catch { font-family: 'Shippori Mincho B1', serif; font-weight: 800; }
+  .f-shipporiant .preview-logo, .f-shipporiant .preview-catch { font-family: 'Shippori Antique', serif; }
+  .f-shipporiantb1 .preview-logo, .f-shipporiantb1 .preview-catch { font-family: 'Shippori Antique B1', serif; }
+
+  .f-hina .preview-logo, .f-hina .preview-catch { font-family: 'Hina Mincho', serif; }
+
+  .f-bizudp .preview-logo, .f-bizudp .preview-catch { font-family: 'BIZ UDPGothic', sans-serif; font-weight: 700; }
+  .f-bizud .preview-logo, .f-bizud .preview-catch { font-family: 'BIZ UDGothic', sans-serif; font-weight: 700; }
+  .f-bizudpm .preview-logo, .f-bizudpm .preview-catch { font-family: 'BIZ UDPMincho', serif; font-weight: 700; }
+  .f-bizudm .preview-logo, .f-bizudm .preview-catch { font-family: 'BIZ UDMincho', serif; font-weight: 700; }
+
+  .f-sawarabig .preview-logo, .f-sawarabig .preview-catch { font-family: 'Sawarabi Gothic', sans-serif; }
+  .f-sawarabim .preview-logo, .f-sawarabim .preview-catch { font-family: 'Sawarabi Mincho', serif; }
+
+  .f-kosugi .preview-logo, .f-kosugi .preview-catch { font-family: 'Kosugi', sans-serif; }
+  .f-kosugim .preview-logo, .f-kosugim .preview-catch { font-family: 'Kosugi Maru', sans-serif; }
+
+  .f-murecho .preview-logo, .f-murecho .preview-catch { font-family: 'Murecho', sans-serif; font-weight: 900; }
+
+  .f-dela .preview-logo, .f-dela .preview-catch { font-family: 'Dela Gothic One', sans-serif; }
+  .f-reggae .preview-logo, .f-reggae .preview-catch { font-family: 'Reggae One', sans-serif; }
+  .f-yusei .preview-logo, .f-yusei .preview-catch { font-family: 'Yusei Magic', sans-serif; }
+  .f-yusei .preview-body { font-family: 'Yusei Magic', sans-serif; }
+  .f-hachimaru .preview-logo, .f-hachimaru .preview-catch { font-family: 'Hachi Maru Pop', sans-serif; }
+  .f-train .preview-logo, .f-train .preview-catch { font-family: 'Train One', sans-serif; }
+  .f-rocknroll .preview-logo, .f-rocknroll .preview-catch { font-family: 'RocknRoll One', sans-serif; }
+  .f-stick .preview-logo, .f-stick .preview-catch { font-family: 'Stick', sans-serif; }
+  .f-dotgothic .preview-logo, .f-dotgothic .preview-catch { font-family: 'DotGothic16', sans-serif; }
+  .f-mochiy .preview-logo, .f-mochiy .preview-catch { font-family: 'Mochiy Pop One', sans-serif; }
+  .f-mochiyp .preview-logo, .f-mochiyp .preview-catch { font-family: 'Mochiy Pop P One', sans-serif; }
+  .f-yujiboku .preview-logo, .f-yujiboku .preview-catch { font-family: 'Yuji Boku', serif; }
+  .f-yujimai .preview-logo, .f-yujimai .preview-catch { font-family: 'Yuji Mai', serif; }
+  .f-yujisyuku .preview-logo, .f-yujisyuku .preview-catch { font-family: 'Yuji Syuku', serif; }
+  .f-slackside .preview-logo, .f-slackside .preview-catch { font-family: 'Slackside One', sans-serif; }
+  .f-tegomin .preview-logo, .f-tegomin .preview-catch { font-family: 'New Tegomin', serif; }
+  .f-potta .preview-logo, .f-potta .preview-catch { font-family: 'Potta One', sans-serif; }
+  .f-cherry .preview-logo, .f-cherry .preview-catch { font-family: 'Cherry Bomb One', sans-serif; }
+
+  .description {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--ink-sub);
+    margin-top: 8px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .preview-logo { font-size: 28px; }
+    .preview-catch { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="page-header">
+  <h1>Google Fonts 日本語 全フォントカタログ</h1>
+  <p>
+    Google Fonts で使える日本語フォントを <strong>50種以上</strong> 全て並べました。<br>
+    各フォントで「Posca Art U（ロゴ風）」「好きなことを、仕事にする。（ヘッドライン風）」を表示しています。<br>
+    気に入ったフォント名をメモしてお伝えください。
+  </p>
+</div>
+
+<div class="index">
+  <h2>カテゴリ目次</h2>
+  <div class="index-list">
+    <a href="#cat1">01. 定番ゴシック（Noto・M PLUS）</a>
+    <a href="#cat2">02. 新世代ゴシック（Zen系）</a>
+    <a href="#cat3">03. ユニバーサルデザイン（BIZ UD）</a>
+    <a href="#cat4">04. レトロ・装飾明朝（Kaisei・Shippori・Hina）</a>
+    <a href="#cat5">05. 手書き・楷書（Klee・Tegomin）</a>
+    <a href="#cat6">06. 古典・サワラビ・コスギ</a>
+    <a href="#cat7">07. 装飾・POP系（Dela・Reggae・Yusei）</a>
+    <a href="#cat8">08. かわいいPOP（Hachi Maru・Mochiy・Cherry Bomb）</a>
+    <a href="#cat9">09. 個性的（Train・RocknRoll・Stick・DotGothic）</a>
+    <a href="#cat10">10. 筆文字・書道（Yuji・Slackside）</a>
+  </div>
+</div>
+
+<!-- ============= 01. 定番ゴシック ============= -->
+<div class="category" id="cat1">
+  <span class="num">01</span><span class="name">定番ゴシック（Noto・M PLUS）</span>
+  <div class="desc">標準・無難・読みやすい・ビジネス系の王道</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-notosans">
+    <div class="font-card-head"><span class="font-name">Noto Sans JP</span><span class="font-tag">標準・万能</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">Google製。最も無難・標準。9ウェイト揃う。個性は弱め。</div>
+  </div>
+
+  <div class="font-card f-notoserif">
+    <div class="font-card-head"><span class="font-name">Noto Serif JP</span><span class="font-tag">明朝・標準</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">標準的な明朝。文学・カフェ寄り。副業商材には合わない。</div>
+  </div>
+
+  <div class="font-card f-mplus1">
+    <div class="font-card-head"><span class="font-name">M PLUS 1</span><span class="font-tag">可変・モダン</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">可変フォント。モダン・幾何学的。サイズ自由。</div>
+  </div>
+
+  <div class="font-card f-mplus1p">
+    <div class="font-card-head"><span class="font-name">M PLUS 1p</span><span class="font-tag">親しみ</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">M PLUSの定番。ゆったりして親しみやすい。</div>
+  </div>
+
+  <div class="font-card f-mplusround">
+    <div class="font-card-head"><span class="font-name">M PLUS Rounded 1c</span><span class="font-tag">丸ゴ・親しみ</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">丸ゴシック。柔らかい・温かい。子供向け・親しみ重視。</div>
+  </div>
+
+  <div class="font-card f-murecho">
+    <div class="font-card-head"><span class="font-name">Murecho</span><span class="font-tag">可変・モダン</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">9ウェイト可変フォント。Neil Summerour 設計。北海道牟礼町から命名。</div>
+  </div>
+
+</div>
+
+<!-- ============= 02. 新世代ゴシック（Zen系） ============= -->
+<div class="category" id="cat2">
+  <span class="num">02</span><span class="name">新世代ゴシック（Zen系）</span>
+  <div class="desc">2021年〜追加。可読性とデザイン性を両立。見出し向け</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-zenkaku">
+    <div class="font-card-head"><span class="font-name">Zen Kaku Gothic New<span class="badge good">前回推奨</span></span><span class="font-tag">モダン・キレ</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">情報商材LPのキレを再現できる。fv045のヘッドラインに最も近い候補。</div>
+  </div>
+
+  <div class="font-card f-zenkakuant">
+    <div class="font-card-head"><span class="font-name">Zen Kaku Gothic Antique</span><span class="font-tag">アンティーク</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">アンティーク調・ノスタルジック・落ち着き。</div>
+  </div>
+
+  <div class="font-card f-zenmaru">
+    <div class="font-card-head"><span class="font-name">Zen Maru Gothic</span><span class="font-tag">丸ゴ・上品</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">上品な丸ゴシック。柔らかさ＋洗練。</div>
+  </div>
+
+  <div class="font-card f-zenold">
+    <div class="font-card-head"><span class="font-name">Zen Old Mincho</span><span class="font-tag">明朝・古典</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">古典明朝。書物・文学的・落ち着き。</div>
+  </div>
+
+  <div class="font-card f-zenantique">
+    <div class="font-card-head"><span class="font-name">Zen Antique</span><span class="font-tag">レトロ明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">大正ロマン的レトロ。カフェ・ブティック向き。</div>
+  </div>
+
+  <div class="font-card f-zenantiquesoft">
+    <div class="font-card-head"><span class="font-name">Zen Antique Soft</span><span class="font-tag">レトロ柔らか</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">Zen Antiqueの柔らかい版。</div>
+  </div>
+
+</div>
+
+<!-- ============= 03. ユニバーサルデザイン（BIZ UD） ============= -->
+<div class="category" id="cat3">
+  <span class="num">03</span><span class="name">ユニバーサルデザイン（BIZ UD）</span>
+  <div class="desc">モリサワ系の派生。可読性最強・ビジネス・教育・公共向け</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-bizudp">
+    <div class="font-card-head"><span class="font-name">BIZ UDPGothic</span><span class="font-tag">プロポーショナル・読みやすさ</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">プロポーショナル・読みやすさ重視。本文向き。</div>
+  </div>
+
+  <div class="font-card f-bizud">
+    <div class="font-card-head"><span class="font-name">BIZ UDGothic</span><span class="font-tag">等幅・ビジネス</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">等幅・正統派ビジネス。可読性最強。</div>
+  </div>
+
+  <div class="font-card f-bizudpm">
+    <div class="font-card-head"><span class="font-name">BIZ UDPMincho</span><span class="font-tag">UD明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">UD明朝・プロポーショナル。読みやすい明朝。</div>
+  </div>
+
+  <div class="font-card f-bizudm">
+    <div class="font-card-head"><span class="font-name">BIZ UDMincho</span><span class="font-tag">UD明朝・等幅</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">UD明朝・等幅。教科書的。</div>
+  </div>
+
+</div>
+
+<!-- ============= 04. レトロ・装飾明朝 ============= -->
+<div class="category" id="cat4">
+  <span class="num">04</span><span class="name">レトロ・装飾明朝（Kaisei・Shippori・Hina）</span>
+  <div class="desc">大正ロマン・築地活版・本格派・高級感</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-kaiseidecol">
+    <div class="font-card-head"><span class="font-name">Kaisei Decol</span><span class="font-tag">装飾セリフ</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">装飾的セリフ・レトロ感。喫茶店・装飾系。</div>
+  </div>
+
+  <div class="font-card f-kaiseiharu">
+    <div class="font-card-head"><span class="font-name">Kaisei HarunoUmi</span><span class="font-tag">柔らか明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">柔らかい明朝。詩集・カフェメニュー向き。</div>
+  </div>
+
+  <div class="font-card f-kaiseiopti">
+    <div class="font-card-head"><span class="font-name">Kaisei Opti</span><span class="font-tag">上品明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">上品明朝・読みやすさ重視。</div>
+  </div>
+
+  <div class="font-card f-kaiseitoku">
+    <div class="font-card-head"><span class="font-name">Kaisei Tokumin</span><span class="font-tag">伝統明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">伝統明朝・古典寄り。</div>
+  </div>
+
+  <div class="font-card f-shippori">
+    <div class="font-card-head"><span class="font-name">Shippori Mincho</span><span class="font-tag">高品質本文明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">築地活版製造所インスパイア。高品質本文用。</div>
+  </div>
+
+  <div class="font-card f-shipporib1">
+    <div class="font-card-head"><span class="font-name">Shippori Mincho B1</span><span class="font-tag">太め・見出し</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">Shippori の太い版。見出し向け・伝統美。</div>
+  </div>
+
+  <div class="font-card f-shipporiant">
+    <div class="font-card-head"><span class="font-name">Shippori Antique</span><span class="font-tag">アンティーク・装飾</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">アンティーク調装飾明朝。看板・ロゴ向き。</div>
+  </div>
+
+  <div class="font-card f-shipporiantb1">
+    <div class="font-card-head"><span class="font-name">Shippori Antique B1</span><span class="font-tag">アンティーク太め</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">B1（太め）版。見出し・装飾用。</div>
+  </div>
+
+  <div class="font-card f-hina">
+    <div class="font-card-head"><span class="font-name">Hina Mincho</span><span class="font-tag">繊細明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">繊細・上品な明朝。化粧品・宝飾品向き。</div>
+  </div>
+
+</div>
+
+<!-- ============= 05. 手書き・楷書 ============= -->
+<div class="category" id="cat5">
+  <span class="num">05</span><span class="name">手書き・楷書（Klee・Tegomin）</span>
+  <div class="desc">教科書体・楷書体・人の手の温かみ</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-klee">
+    <div class="font-card-head"><span class="font-name">Klee One<span class="badge good">候補</span></span><span class="font-tag">鉛筆手書き楷書</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">鉛筆/ペン手書き風楷書。静かで上品。お客様の声・引用向き。</div>
+  </div>
+
+  <div class="font-card f-tegomin">
+    <div class="font-card-head"><span class="font-name">New Tegomin</span><span class="font-tag">手書き明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">手書き感のある明朝。書きかけのノート風。</div>
+  </div>
+
+</div>
+
+<!-- ============= 06. 古典・サワラビ・コスギ ============= -->
+<div class="category" id="cat6">
+  <span class="num">06</span><span class="name">サワラビ・コスギ系</span>
+  <div class="desc">古めの定番Google Fonts日本語</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-sawarabig">
+    <div class="font-card-head"><span class="font-name">Sawarabi Gothic</span><span class="font-tag">古典ゴシック</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">古めの定番。地味目・落ち着き。</div>
+  </div>
+
+  <div class="font-card f-sawarabim">
+    <div class="font-card-head"><span class="font-name">Sawarabi Mincho</span><span class="font-tag">古典明朝</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">古典明朝・素朴。</div>
+  </div>
+
+  <div class="font-card f-kosugi">
+    <div class="font-card-head"><span class="font-name">Kosugi</span><span class="font-tag">古典ゴシック</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">読みやすい古典ゴシック。</div>
+  </div>
+
+  <div class="font-card f-kosugim">
+    <div class="font-card-head"><span class="font-name">Kosugi Maru</span><span class="font-tag">丸ゴ</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">丸ゴシック版。柔らかい印象。</div>
+  </div>
+
+</div>
+
+<!-- ============= 07. 装飾・POP系 ============= -->
+<div class="category" id="cat7">
+  <span class="num">07</span><span class="name">装飾・POP系（Dela・Reggae・Yusei）</span>
+  <div class="desc">YouTubeサムネ・キャッチコピー・LP見出し向け</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-yusei">
+    <div class="font-card-head"><span class="font-name">Yusei Magic<span class="badge must">本命★</span></span><span class="font-tag">油性マーカー手書き</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description"><strong>油性マーカー（ポスカ）で書いたような手書き風</strong>。商材コンセプトと100%一致する稀有なフォント。</div>
+  </div>
+
+  <div class="font-card f-dela">
+    <div class="font-card-head"><span class="font-name">Dela Gothic One<span class="badge ok">推奨</span></span><span class="font-tag">超極太装飾</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">超極太ゴシック。横長安定感。タイトル・キャッチコピー向き。インパクト最大。</div>
+  </div>
+
+  <div class="font-card f-reggae">
+    <div class="font-card-head"><span class="font-name">Reggae One</span><span class="font-tag">手書き躍動感</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">各ストロークに手書き感。躍動感・エネルギッシュ。</div>
+  </div>
+
+  <div class="font-card f-rocknroll">
+    <div class="font-card-head"><span class="font-name">RocknRoll One</span><span class="font-tag">ロック調</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">骨太ロック調・若者向け。スポーティ・ストリート。</div>
+  </div>
+
+</div>
+
+<!-- ============= 08. かわいいPOP ============= -->
+<div class="category" id="cat8">
+  <span class="num">08</span><span class="name">かわいいPOP（Hachi Maru・Mochiy・Cherry Bomb）</span>
+  <div class="desc">親しみ・かわいさ・主婦/ママ層</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-hachimaru">
+    <div class="font-card-head"><span class="font-name">Hachi Maru Pop</span><span class="font-tag">丸文字POP</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">女子高生風丸文字。かわいさ最大。主婦/ママ向き。</div>
+  </div>
+
+  <div class="font-card f-mochiy">
+    <div class="font-card-head"><span class="font-name">Mochiy Pop One</span><span class="font-tag">餅っぽい丸</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">餅っぽい丸文字。たぷたぷした親しみ。</div>
+  </div>
+
+  <div class="font-card f-mochiyp">
+    <div class="font-card-head"><span class="font-name">Mochiy Pop P One</span><span class="font-tag">プロポーショナル丸</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">プロポーショナル版。読みやすさUP。</div>
+  </div>
+
+  <div class="font-card f-cherry">
+    <div class="font-card-head"><span class="font-name">Cherry Bomb One</span><span class="font-tag">爆発的POP</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">爆弾風の装飾・極太POP。インパクト大。</div>
+  </div>
+
+  <div class="font-card f-potta">
+    <div class="font-card-head"><span class="font-name">Potta One</span><span class="font-tag">ぽってり</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">ぽってりした極太丸文字。手書き感。</div>
+  </div>
+
+</div>
+
+<!-- ============= 09. 個性的 ============= -->
+<div class="category" id="cat9">
+  <span class="num">09</span><span class="name">個性的（Train・RocknRoll・Stick・DotGothic）</span>
+  <div class="desc">特殊用途・差別化・限定使用</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-train">
+    <div class="font-card-head"><span class="font-name">Train One</span><span class="font-tag">鉄道風</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">鉄道駅名標風。レトロ・JR的。</div>
+  </div>
+
+  <div class="font-card f-stick">
+    <div class="font-card-head"><span class="font-name">Stick</span><span class="font-tag">細線装飾</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">細い直線のみ。モダン・幾何学的・装飾。</div>
+  </div>
+
+  <div class="font-card f-dotgothic">
+    <div class="font-card-head"><span class="font-name">DotGothic16</span><span class="font-tag">ピクセル</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">16bitピクセル。レトロゲーム風。</div>
+  </div>
+
+  <div class="font-card f-slackside">
+    <div class="font-card-head"><span class="font-name">Slackside One</span><span class="font-tag">手書き斜体</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">斜体・手書きカジュアル。</div>
+  </div>
+
+</div>
+
+<!-- ============= 10. 筆文字・書道 ============= -->
+<div class="category" id="cat10">
+  <span class="num">10</span><span class="name">筆文字・書道（Yuji・Slackside）</span>
+  <div class="desc">和風・墨絵・伝統</div>
+</div>
+<div class="font-grid">
+
+  <div class="font-card f-yujiboku">
+    <div class="font-card-head"><span class="font-name">Yuji Boku</span><span class="font-tag">墨筆</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">墨筆・和風・書道。料亭・伝統商材向き。</div>
+  </div>
+
+  <div class="font-card f-yujimai">
+    <div class="font-card-head"><span class="font-name">Yuji Mai</span><span class="font-tag">筆文字</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">優美な筆文字。和風雑誌の見出し向き。</div>
+  </div>
+
+  <div class="font-card f-yujisyuku">
+    <div class="font-card-head"><span class="font-name">Yuji Syuku</span><span class="font-tag">筆文字</span></div>
+    <div class="preview-logo">Posca Art U</div>
+    <div class="preview-catch">好きなことを、<span class="marker">仕事にする。</span></div>
+    <div class="description">線の細い筆文字。粋・伝統。</div>
+  </div>
+
+</div>
+
+</div>
+</body>
+</html>

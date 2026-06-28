@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フォント5案比較 ｜ ポスカアート講座LP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=M+PLUS+1:wght@400;500;700;800;900&family=Klee+One:wght@400;600&family=Line+Seed+JP:wght@400;700&family=IBM+Plex+Sans+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #1a1612;
+    --ink-sub: #6b6359;
+    --bg: #fdfaf5;
+    --bg-alt: #f4ede0;
+    --line: #e5dcc9;
+    --accent: #c47b3a;
+    --warn: #ffd900;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    line-height: 1.7;
+    padding: 40px 20px 80px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* ページ全体ヘッダー */
+  .page-header {
+    text-align: center;
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--line);
+  }
+  .page-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    color: var(--ink-sub);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  /* 各案の枠 */
+  .case {
+    background: white;
+    border: 1px solid var(--line);
+    margin-bottom: 48px;
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .case-header {
+    background: var(--bg-alt);
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .case-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .case-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    margin-bottom: 4px;
+  }
+  .case-meta {
+    font-size: 12px;
+    color: var(--ink-sub);
+    letter-spacing: 0.05em;
+  }
+  .case-recommend {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    margin-left: 8px;
+    letter-spacing: 0.15em;
+  }
+
+  /* プレビュー部分 */
+  .preview {
+    padding: 0;
+  }
+  .preview-bar {
+    background: var(--warn);
+    color: var(--ink);
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 13px;
+    font-weight: 800;
+    border-bottom: 3px solid var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .preview-bar .hl {
+    background: var(--ink);
+    color: var(--warn);
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 900;
+  }
+  .preview-main {
+    padding: 40px 36px;
+  }
+  .preview-eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    padding: 6px 14px;
+    border: 1px solid var(--accent);
+    margin-bottom: 24px;
+  }
+  .preview-catch {
+    font-size: 56px;
+    line-height: 1.35;
+    margin-bottom: 22px;
+  }
+  .preview-catch .marker {
+    background: linear-gradient(transparent 62%, #ffe88a 62%, #ffe88a 92%, transparent 92%);
+    padding: 0 6px;
+  }
+  .preview-sub {
+    font-size: 15px;
+    color: var(--ink-sub);
+    margin-bottom: 24px;
+    line-height: 1.85;
+  }
+  .preview-rare {
+    background: var(--bg);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .preview-name {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    font-size: 12px;
+    color: var(--ink-sub);
+    letter-spacing: 0.3em;
+    margin-bottom: 16px;
+  }
+  .preview-stats {
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .preview-stat-num {
+    font-size: 32px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .preview-stat-label {
+    font-size: 10px;
+    color: var(--ink-sub);
+    letter-spacing: 0.12em;
+  }
+
+  /* 案の説明 */
+  .case-desc {
+    padding: 24px 28px;
+    border-top: 1px solid var(--line);
+    background: #fafafa;
+  }
+  .case-desc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .case-desc-grid h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .case-desc-grid p { color: var(--ink-sub); }
+
+  /* ===== 各案個別のフォント設定 ===== */
+
+  /* A案: Zen Kaku Gothic New */
+  .case-A .preview-bar { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
+  .case-A .preview-bar .hl { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
+  .case-A .preview-eyebrow { font-family: 'Inter', sans-serif; }
+  .case-A .preview-catch { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; letter-spacing: -0.025em; }
+  .case-A .preview-sub { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; letter-spacing: 0.03em; }
+  .case-A .preview-rare { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; }
+  .case-A .preview-name { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+  .case-A .preview-stat-num { font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.02em; }
+  .case-A .preview-stat-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+
+  /* B案: M PLUS 1 + Klee One */
+  .case-B .preview-bar { font-family: 'M PLUS 1', sans-serif; font-weight: 800; }
+  .case-B .preview-bar .hl { font-family: 'M PLUS 1', sans-serif; font-weight: 900; }
+  .case-B .preview-eyebrow { font-family: 'Klee One', serif; font-weight: 600; letter-spacing: 0.18em; }
+  .case-B .preview-catch { font-family: 'M PLUS 1', sans-serif; font-weight: 900; letter-spacing: -0.015em; }
+  .case-B .preview-sub { font-family: 'M PLUS 1', sans-serif; font-weight: 500; }
+  .case-B .preview-rare { font-family: 'M PLUS 1', sans-serif; font-weight: 500; }
+  .case-B .preview-name { font-family: 'Klee One', serif; font-weight: 600; letter-spacing: 0.2em; }
+  .case-B .preview-stat-num { font-family: 'M PLUS 1', sans-serif; font-weight: 900; }
+  .case-B .preview-stat-label { font-family: 'M PLUS 1', sans-serif; font-weight: 700; }
+
+  /* C案: LINE Seed JP + Klee One （第一推奨） */
+  .case-C .preview-bar { font-family: 'Line Seed JP', sans-serif; font-weight: 700; }
+  .case-C .preview-bar .hl { font-family: 'Line Seed JP', sans-serif; font-weight: 700; }
+  .case-C .preview-eyebrow { font-family: 'Inter', sans-serif; }
+  .case-C .preview-catch { font-family: 'Line Seed JP', sans-serif; font-weight: 700; letter-spacing: -0.015em; }
+  .case-C .preview-sub { font-family: 'Line Seed JP', sans-serif; font-weight: 400; }
+  .case-C .preview-rare { font-family: 'Line Seed JP', sans-serif; font-weight: 400; }
+  .case-C .preview-name { font-family: 'Klee One', serif; font-weight: 600; letter-spacing: 0.2em; }
+  .case-C .preview-stat-num { font-family: 'Line Seed JP', sans-serif; font-weight: 700; }
+  .case-C .preview-stat-label { font-family: 'Line Seed JP', sans-serif; font-weight: 700; }
+
+  /* D案: IBM Plex Sans JP */
+  .case-D .preview-bar { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 700; }
+  .case-D .preview-bar .hl { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 700; }
+  .case-D .preview-eyebrow { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 700; }
+  .case-D .preview-catch { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .case-D .preview-sub { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 400; }
+  .case-D .preview-rare { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 400; }
+  .case-D .preview-name { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 500; letter-spacing: 0.25em; }
+  .case-D .preview-stat-num { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 700; }
+  .case-D .preview-stat-label { font-family: 'IBM Plex Sans JP', sans-serif; font-weight: 500; }
+
+  /* E案: 游ゴシック OS標準 */
+  .case-E { font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Sans', sans-serif; }
+  .case-E .preview-bar { font-family: inherit; font-weight: 700; }
+  .case-E .preview-bar .hl { font-family: inherit; font-weight: 700; }
+  .case-E .preview-eyebrow { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; font-weight: 700; }
+  .case-E .preview-catch { font-family: inherit; font-weight: 700; letter-spacing: 0; }
+  .case-E .preview-sub { font-family: inherit; font-weight: 500; }
+  .case-E .preview-rare { font-family: inherit; font-weight: 500; }
+  .case-E .preview-name { font-family: inherit; font-weight: 600; }
+  .case-E .preview-stat-num { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; font-weight: 800; }
+  .case-E .preview-stat-label { font-family: inherit; font-weight: 600; }
+
+  @media (max-width: 700px) {
+    .preview-catch { font-size: 40px; }
+    .preview-main { padding: 32px 24px; }
+    .case-desc-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="page-header">
+    <h1>フォント 5 案 比較プレビュー</h1>
+    <p>同じ文言を 5 つのフォント設定で並べました。実物を見ながらお選びください。</p>
+  </div>
+
+  <!-- ===== A案 ===== -->
+  <div class="case case-A">
+    <div class="case-header">
+      <div class="case-tag">CASE A</div>
+      <div class="case-title">副業情報商材ガチ寄り（fv045完全模倣）</div>
+      <div class="case-meta">Zen Kaku Gothic New Black + Noto Sans JP + Inter</div>
+    </div>
+    <div class="preview">
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><div class="preview-stat-num">10<span style="font-size:14px;">万人+</span></div><div class="preview-stat-label">チャンネル登録者</div></div>
+          <div><div class="preview-stat-num">1,000<span style="font-size:14px;">万回+</span></div><div class="preview-stat-label">累計再生回数</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-desc">
+      <div class="case-desc-grid">
+        <div><h4>印象</h4><p>キレ・即効・商業力</p></div>
+        <div><h4>ペルソナ</h4><p>fv045系の業界標準を最大化したい人</p></div>
+        <div><h4>メリット</h4><p>広告流入後のCV最大化に強い</p></div>
+        <div><h4>デメリット</h4><p>情報商材っぽさが残る・ブランディング型には重い</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== B案 ===== -->
+  <div class="case case-B">
+    <div class="case-header">
+      <div class="case-tag">CASE B</div>
+      <div class="case-title">YouTuber クリエイター個人ブランド系</div>
+      <div class="case-meta">M PLUS 1 Black + Klee One（講師名）</div>
+    </div>
+    <div class="preview">
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><div class="preview-stat-num">10<span style="font-size:14px;">万人+</span></div><div class="preview-stat-label">チャンネル登録者</div></div>
+          <div><div class="preview-stat-num">1,000<span style="font-size:14px;">万回+</span></div><div class="preview-stat-label">累計再生回数</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-desc">
+      <div class="case-desc-grid">
+        <div><h4>印象</h4><p>親しみ・クリエイティブ・ポップ</p></div>
+        <div><h4>ペルソナ</h4><p>HIKAKIN/ヒカル系の個人ブランドに寄せたい人</p></div>
+        <div><h4>メリット</h4><p>個人ブランド感・親しみやすさ・アート要素</p></div>
+        <div><h4>デメリット</h4><p>やや子供っぽくなるリスク</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== C案（推奨） ===== -->
+  <div class="case case-C">
+    <div class="case-header">
+      <div class="case-tag">CASE C <span class="case-recommend">第一推奨</span></div>
+      <div class="case-title">親しみ × モダン × アート（LINE Seed JP）</div>
+      <div class="case-meta">LINE Seed JP（2026年1月公開）+ Klee One（一部アクセント）</div>
+    </div>
+    <div class="preview">
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><div class="preview-stat-num">10<span style="font-size:14px;">万人+</span></div><div class="preview-stat-label">チャンネル登録者</div></div>
+          <div><div class="preview-stat-num">1,000<span style="font-size:14px;">万回+</span></div><div class="preview-stat-label">累計再生回数</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-desc">
+      <div class="case-desc-grid">
+        <div><h4>印象</h4><p>温かみ × モダン × 親しみ</p></div>
+        <div><h4>ペルソナ</h4><p>アート × 商業を両立したい個人講師</p></div>
+        <div><h4>メリット</h4><p>2026年最新・和欧混植が美麗・アート性と信頼性の両立・差別化</p></div>
+        <div><h4>デメリット</h4><p>2026年1月追加でまだ国内事例少なめ</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== D案 ===== -->
+  <div class="case case-D">
+    <div class="case-header">
+      <div class="case-tag">CASE D</div>
+      <div class="case-title">モダンビジネス洗練系（テック寄り）</div>
+      <div class="case-meta">IBM Plex Sans JP</div>
+    </div>
+    <div class="preview">
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><div class="preview-stat-num">10<span style="font-size:14px;">万人+</span></div><div class="preview-stat-label">チャンネル登録者</div></div>
+          <div><div class="preview-stat-num">1,000<span style="font-size:14px;">万回+</span></div><div class="preview-stat-label">累計再生回数</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-desc">
+      <div class="case-desc-grid">
+        <div><h4>印象</h4><p>テック・洗練・冷静</p></div>
+        <div><h4>ペルソナ</h4><p>SaaS・モダンビジネス寄りに見せたい人</p></div>
+        <div><h4>メリット</h4><p>プロフェッショナル感・テック企業風</p></div>
+        <div><h4>デメリット</h4><p>アート系・温かみが弱く、ポスカと親和性低</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== E案 ===== -->
+  <div class="case case-E">
+    <div class="case-header">
+      <div class="case-tag">CASE E</div>
+      <div class="case-title">real045完全模倣（OS標準・游ゴシック）</div>
+      <div class="case-meta">游ゴシック体（Mac/Windows標準）</div>
+    </div>
+    <div class="preview">
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><div class="preview-stat-num">10<span style="font-size:14px;">万人+</span></div><div class="preview-stat-label">チャンネル登録者</div></div>
+          <div><div class="preview-stat-num">1,000<span style="font-size:14px;">万回+</span></div><div class="preview-stat-label">累計再生回数</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-desc">
+      <div class="case-desc-grid">
+        <div><h4>印象</h4><p>親しみやすいプロフェッショナリズム・読みやすさ</p></div>
+        <div><h4>ペルソナ</h4><p>real045と同等の上品さ・読み心地最優先</p></div>
+        <div><h4>メリット</h4><p>鳥海修「水のような書体」思想・OS標準で高速・無難</p></div>
+        <div><h4>デメリット</h4><p>個性弱め・Mac/Win で見え方が違う</p></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

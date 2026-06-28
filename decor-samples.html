@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>セクション装飾 B案 5パターン比較</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Yusei+Magic&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --yellow: #ffd900;
+    --orange: #ee8a3c;
+    --text: #1f1a14;
+    --bg: #fdfaf3;
+    --line: #e5dcc9;
+  }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f4ede0;
+    padding: 30px 20px;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 28px;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .intro {
+    text-align: center;
+    color: #6b6359;
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+  }
+
+  /* 各案ラッパー */
+  .case {
+    margin-bottom: 32px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .case-header {
+    background: var(--text);
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .case-tag {
+    background: var(--yellow);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    padding: 3px 10px;
+    letter-spacing: 0.15em;
+    border-radius: 2px;
+  }
+  .case-name {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+  }
+  .case-desc {
+    margin-left: auto;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+  }
+
+  /* セクションサンプル（実物大に近い表示） */
+  .sample {
+    position: relative;
+    padding: 60px 40px;
+    background: var(--bg);
+    overflow: hidden;
+    min-height: 240px;
+  }
+  .sample-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  .sample-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+  .sample-title {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .sample-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    color: #6b6359;
+    line-height: 1.85;
+  }
+
+  /* ============================================
+     比較①: Aパターン（基準）= 現在のヒーロー風
+     ============================================ */
+  .sample-A::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    width: 50px;
+    height: calc(100% + 40px);
+    background: var(--yellow);
+    transform: skewX(-14deg);
+    opacity: 0.55;
+    z-index: 0;
+  }
+  .sample-A::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 50px;
+    height: calc(100% + 40px);
+    background: var(--yellow);
+    transform: skewX(-14deg);
+    opacity: 0.55;
+    z-index: 0;
+  }
+
+  /* ============================================
+     B-1: ドットライン
+     ============================================ */
+  .sample-B1 {
+    background:
+      radial-gradient(circle, var(--yellow) 5px, transparent 6px) left center / 18px 32px repeat-y,
+      radial-gradient(circle, var(--yellow) 5px, transparent 6px) right center / 18px 32px repeat-y,
+      var(--bg);
+    background-position: 12px center, calc(100% - 12px) center;
+    background-repeat: no-repeat, no-repeat;
+  }
+  .sample-B1 .dot-col {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 0;
+  }
+  .sample-B1 .dot-col-left { left: 12px; }
+  .sample-B1 .dot-col-right { right: 12px; }
+  .sample-B1 .dot-col span {
+    width: 12px; height: 12px;
+    background: var(--yellow);
+    border-radius: 50%;
+  }
+
+  /* ============================================
+     B-2: 太い縦帯
+     ============================================ */
+  .sample-B2::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 22px;
+    background: var(--yellow);
+    z-index: 0;
+  }
+  .sample-B2::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 22px;
+    background: var(--yellow);
+    z-index: 0;
+  }
+
+  /* ============================================
+     B-3: 山形（ジグザグ）
+     ============================================ */
+  .sample-B3 .zigzag {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 26px;
+    background: var(--yellow);
+    clip-path: polygon(0 0, 100% 12.5%, 0 25%, 100% 37.5%, 0 50%, 100% 62.5%, 0 75%, 100% 87.5%, 0 100%);
+    z-index: 0;
+  }
+  .sample-B3 .zigzag-left { left: 0; }
+  .sample-B3 .zigzag-right {
+    right: 0;
+    transform: scaleX(-1);
+  }
+
+  /* ============================================
+     B-4: 対角ブロック
+     ============================================ */
+  .sample-B4 {
+    overflow: hidden;
+  }
+  .sample-B4 .corner {
+    position: absolute;
+    background: var(--yellow);
+    opacity: 0.65;
+    z-index: 0;
+  }
+  .sample-B4 .corner-tl {
+    top: -30px; left: -30px;
+    width: 180px; height: 110px;
+    transform: skewX(-20deg);
+  }
+  .sample-B4 .corner-br {
+    bottom: -30px; right: -30px;
+    width: 180px; height: 110px;
+    transform: skewX(-20deg);
+  }
+
+  /* ============================================
+     B-5: 縦長楕円
+     ============================================ */
+  .sample-B5 .oval {
+    position: absolute;
+    width: 30px;
+    height: 70px;
+    background: var(--yellow);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .sample-B5 .oval-l-1 { top: 30px; left: 10px; }
+  .sample-B5 .oval-l-2 { top: 50%; left: 10px; transform: translateY(-50%); }
+  .sample-B5 .oval-l-3 { bottom: 30px; left: 10px; }
+  .sample-B5 .oval-r-1 { top: 30px; right: 10px; }
+  .sample-B5 .oval-r-2 { top: 50%; right: 10px; transform: translateY(-50%); }
+  .sample-B5 .oval-r-3 { bottom: 30px; right: 10px; }
+
+  .note {
+    background: #fff8e0;
+    padding: 12px 18px;
+    border-left: 4px solid var(--yellow);
+    font-size: 12px;
+    color: #5a4a35;
+    line-height: 1.75;
+  }
+  .note strong { color: var(--orange); }
+
+  .compare-label {
+    text-align: center;
+    margin: 16px 0;
+    color: #6b6359;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+  .recommendation {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 2px solid var(--orange);
+  }
+  .recommendation h3 {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 18px;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>セクション区切り装飾・5パターン比較</h1>
+  <p class="intro">
+    「Aパターン（現在のヒーロー）」と組み合わせて使う Bパターンの候補を5案ご用意しました。<br>
+    色（黄色）とシンプルさは共通。形やバリエーションだけを変えています。
+  </p>
+
+  <!-- 基準: Aパターン -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-tag">基準</span>
+      <span class="case-name">Aパターン（現在のヒーローと同じ・斜めライン）</span>
+      <span class="case-desc">奇数セクションで使う想定</span>
+    </div>
+    <div class="sample sample-A">
+      <div class="sample-content">
+        <p class="sample-eyebrow">SAMPLE SECTION</p>
+        <h2 class="sample-title">セクションタイトル</h2>
+        <p class="sample-text">これは説明文のサンプルです。<br>装飾の見え方を確認するためのものです。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-label">↓ これに対して、偶数セクション用のB案 ↓</div>
+
+  <!-- B-1: ドット -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-tag">B-1</span>
+      <span class="case-name">ドットライン</span>
+      <span class="case-desc">黄色の丸が縦に並ぶ・規則的で柔らかい</span>
+    </div>
+    <div class="sample sample-B1">
+      <div class="dot-col dot-col-left">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="dot-col dot-col-right">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="sample-content">
+        <p class="sample-eyebrow">SAMPLE SECTION</p>
+        <h2 class="sample-title">セクションタイトル</h2>
+        <p class="sample-text">これは説明文のサンプルです。<br>装飾の見え方を確認するためのものです。</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>印象:</strong> 「斜めのベタ塗り」→「規則的な点」で完全に形が変わる。優しく柔らかい印象。
+    </div>
+  </div>
+
+  <!-- B-2: 太い縦帯 -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-tag">B-2</span>
+      <span class="case-name">太い縦帯（傾きなし）</span>
+      <span class="case-desc">斜めではなく垂直なベタ塗り・整然とした印象</span>
+    </div>
+    <div class="sample sample-B2">
+      <div class="sample-content">
+        <p class="sample-eyebrow">SAMPLE SECTION</p>
+        <h2 class="sample-title">セクションタイトル</h2>
+        <p class="sample-text">これは説明文のサンプルです。<br>装飾の見え方を確認するためのものです。</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>印象:</strong> Aパターンとの違いが「傾きの有無」だけ。差分が控えめ。やや単調になるかも。
+    </div>
+  </div>
+
+  <!-- B-3: ジグザグ -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-tag">B-3</span>
+      <span class="case-name">山形ジグザグ</span>
+      <span class="case-desc">三角形が縦に重なる・動きと遊び心</span>
+    </div>
+    <div class="sample sample-B3">
+      <span class="zigzag zigzag-left"></span>
+      <span class="zigzag zigzag-right"></span>
+      <div class="sample-content">
+        <p class="sample-eyebrow">SAMPLE SECTION</p>
+        <h2 class="sample-title">セクションタイトル</h2>
+        <p class="sample-text">これは説明文のサンプルです。<br>装飾の見え方を確認するためのものです。</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>印象:</strong> 「動的・カジュアル」。形の差が大きく印象がだいぶ変わる。ややクセが強め。
+    </div>
+  </div>
+
+  <!-- B-4: 対角ブロック -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-tag">B-4</span>
+      <span class="case-name">対角ブロック</span>
+      <span class="case-desc">左上と右下の対角に黄色ブロック・モダン</span>
+    </div>
+    <div class="sample sample-B4">
+      <span class="corner corner-tl"></span>
+      <span class="corner corner-br"></span>
+      <div class="sample-content">
+        <p class="sample-eyebrow">SAMPLE SECTION</p>
+        <h2 class="sample-title">セクションタイトル</h2>
+        <p class="sample-text">これは説明文のサンプルです。<br>装飾の見え方を確認するためのものです。</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>印象:</strong> 「縦の動き」→「対角線（Z字）の動き」。視線誘導の方向が変わるので印象がはっきり変わる。
+    </div>
+  </div>
+
+  <!-- B-5: 縦長楕円 -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-tag">B-5</span>
+      <span class="case-name">縦長楕円</span>
+      <span class="case-desc">背の高い楕円が縦に並ぶ・有機的</span>
+    </div>
+    <div class="sample sample-B5">
+      <span class="oval oval-l-1"></span>
+      <span class="oval oval-l-2"></span>
+      <span class="oval oval-l-3"></span>
+      <span class="oval oval-r-1"></span>
+      <span class="oval oval-r-2"></span>
+      <span class="oval oval-r-3"></span>
+      <div class="sample-content">
+        <p class="sample-eyebrow">SAMPLE SECTION</p>
+        <h2 class="sample-title">セクションタイトル</h2>
+        <p class="sample-text">これは説明文のサンプルです。<br>装飾の見え方を確認するためのものです。</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>印象:</strong> 「直線」→「曲線」で、ニュアンスは変わるがAパターンとの差別化はやや弱め。
+    </div>
+  </div>
+
+  <div class="recommendation">
+    <h3>🏆 私のおすすめ</h3>
+    <p style="font-size: 13px; line-height: 1.85; color: #5a4a35;">
+      <strong>B-1（ドットライン）</strong> または <strong>B-4（対角ブロック）</strong> が、Aパターンとの差が分かりやすく統一感も保てます。<br>
+      ・B-1：柔らかく親しみやすい印象を加えたい場合<br>
+      ・B-4：モダンで動きのある印象を加えたい場合
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

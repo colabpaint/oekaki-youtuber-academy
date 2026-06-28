@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4URL完全再現フォント案 ｜ ポスカアート講座LP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #1a1612;
+    --ink-sub: #6b6359;
+    --bg: #fdfaf5;
+    --bg-alt: #f4ede0;
+    --line: #e5dcc9;
+    --accent: #c47b3a;
+    --warn: #ffd900;
+    --highlight: #ffe88a;
+  }
+  body {
+    background: #f0ebe0;
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    padding: 32px 16px 80px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* ヘッダー */
+  .page-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 32px 24px;
+    background: white;
+    border: 1px solid var(--line);
+  }
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .page-header p {
+    color: var(--ink-sub);
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .page-header .note {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--bg);
+    font-size: 13px;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    text-align: left;
+  }
+
+  /* 案 */
+  .case {
+    background: white;
+    border: 1px solid var(--line);
+    margin-bottom: 56px;
+    overflow: hidden;
+  }
+  .case-header {
+    background: var(--bg-alt);
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .case-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+  .case-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+  }
+  .case-recommend {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 12px;
+    letter-spacing: 0.15em;
+    border-radius: 2px;
+  }
+
+  /* フォントマップ表 */
+  .fontmap {
+    padding: 20px 32px;
+    background: #fafafa;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+  }
+  .fontmap-title {
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    font-size: 11px;
+  }
+  .fontmap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+    color: var(--ink-sub);
+  }
+  .fontmap-row {
+    display: flex;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .fontmap-label { font-weight: 700; min-width: 100px; color: var(--ink); }
+
+  /* プレビュー */
+  .preview-bar {
+    background: var(--warn);
+    color: var(--ink);
+    text-align: center;
+    padding: 12px 16px;
+    border-bottom: 3px solid var(--ink);
+    font-size: 14px;
+    letter-spacing: -0.005em;
+    line-height: 1.45;
+  }
+  .preview-bar .hl {
+    background: var(--ink);
+    color: var(--warn);
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin: 0 3px;
+  }
+  .preview-main { padding: 48px 40px; }
+  .preview-logo {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .preview-eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    padding: 6px 14px;
+    border: 1px solid var(--accent);
+    margin-bottom: 24px;
+  }
+  .preview-catch {
+    font-size: 56px;
+    line-height: 1.35;
+    margin-bottom: 24px;
+  }
+  .preview-catch .marker {
+    background: linear-gradient(transparent 62%, var(--highlight) 62%, var(--highlight) 92%, transparent 92%);
+    padding: 0 6px;
+  }
+  .preview-sub {
+    font-size: 15px;
+    color: var(--ink-sub);
+    margin-bottom: 28px;
+    line-height: 1.85;
+  }
+  .preview-rare {
+    background: var(--bg);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  .preview-rare strong { color: var(--accent); }
+  .preview-name {
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    font-size: 12px;
+    color: var(--ink-sub);
+    margin-bottom: 32px;
+  }
+
+  /* 数字統計 */
+  .preview-stats {
+    display: flex;
+    gap: 32px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 32px;
+  }
+  .stat-num {
+    font-size: 36px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-unit { font-size: 13px; margin-left: 3px; }
+  .stat-label { font-size: 10px; color: var(--ink-sub); letter-spacing: 0.12em; }
+
+  /* お客様の声 */
+  .voice-card {
+    background: var(--bg);
+    padding: 20px;
+    border: 1px solid var(--line);
+    margin-bottom: 16px;
+  }
+  .voice-row {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .voice-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    background: var(--accent);
+    padding: 3px 10px;
+    letter-spacing: 0.1em;
+  }
+  .voice-name { font-size: 14px; }
+  .voice-text {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+  .voice-quote-mark {
+    font-family: serif;
+    color: var(--accent);
+    font-size: 24px;
+    margin-right: 4px;
+  }
+
+  /* ===== A案: real045完全再現（游ゴシック1ファミリー） ===== */
+  .case-A { font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Sans', sans-serif; }
+  .case-A .preview-bar { font-family: inherit; font-weight: 700; }
+  .case-A .preview-bar .hl { font-family: inherit; font-weight: 700; }
+  .case-A .preview-logo { font-family: inherit; font-weight: 700; letter-spacing: 0.05em; }
+  .case-A .preview-eyebrow { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; }
+  .case-A .preview-catch { font-family: inherit; font-weight: 700; letter-spacing: 0; }
+  .case-A .preview-sub { font-family: inherit; font-weight: 500; letter-spacing: 0.04em; }
+  .case-A .preview-rare { font-family: inherit; font-weight: 500; }
+  .case-A .preview-rare strong { font-family: inherit; font-weight: 700; }
+  .case-A .preview-name { font-family: inherit; font-weight: 600; letter-spacing: 0.3em; }
+  .case-A .stat-num { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 800; }
+  .case-A .stat-unit { font-family: inherit; font-weight: 700; }
+  .case-A .stat-label { font-family: inherit; font-weight: 600; }
+  .case-A .voice-label { font-family: -apple-system, sans-serif; }
+  .case-A .voice-name { font-family: inherit; font-weight: 700; }
+  .case-A .voice-text { font-family: inherit; font-weight: 500; }
+
+  /* ===== B案: fv045完全再現（Zen Kaku Gothic New + Noto Sans JP + Inter + Klee One） ===== */
+  .case-B .preview-bar { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; letter-spacing: -0.005em; }
+  .case-B .preview-bar .hl { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
+  .case-B .preview-logo { font-family: 'Klee One', serif; font-weight: 600; letter-spacing: 0.02em; }
+  .case-B .preview-eyebrow { font-family: 'Inter', sans-serif; font-weight: 700; }
+  .case-B .preview-catch { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; letter-spacing: -0.025em; }
+  .case-B .preview-sub { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; letter-spacing: 0.04em; }
+  .case-B .preview-rare { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; }
+  .case-B .preview-rare strong { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 800; }
+  .case-B .preview-name { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; letter-spacing: 0.3em; }
+  .case-B .stat-num { font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.03em; }
+  .case-B .stat-unit { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+  .case-B .stat-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+  .case-B .voice-label { font-family: 'Inter', sans-serif; }
+  .case-B .voice-name { font-family: 'Noto Sans JP', sans-serif; font-weight: 800; }
+  .case-B .voice-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; }
+
+  /* ===== E案: ハイブリッド（推奨・全部使い分け） ===== */
+  .case-E .preview-bar { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; letter-spacing: -0.005em; }
+  .case-E .preview-bar .hl { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
+  .case-E .preview-logo { font-family: 'Klee One', serif; font-weight: 600; letter-spacing: 0.05em; }
+  .case-E .preview-eyebrow { font-family: 'Inter', sans-serif; font-weight: 700; }
+  .case-E .preview-catch { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; letter-spacing: -0.025em; }
+  .case-E .preview-sub { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; letter-spacing: 0.04em; }
+  .case-E .preview-rare { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; }
+  .case-E .preview-rare strong { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 800; }
+  .case-E .preview-name { font-family: 'Klee One', serif; font-weight: 600; letter-spacing: 0.05em; font-size: 14px; }
+  .case-E .stat-num { font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.03em; }
+  .case-E .stat-unit { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+  .case-E .stat-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+  .case-E .voice-label { font-family: 'Inter', sans-serif; }
+  .case-E .voice-name { font-family: 'Klee One', serif; font-weight: 600; letter-spacing: 0.03em; }
+  .case-E .voice-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; }
+
+  /* 注釈 */
+  .preview-footnote {
+    margin-top: 24px;
+    padding: 16px;
+    background: var(--bg-alt);
+    border-left: 3px solid var(--accent);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: var(--ink-sub);
+    line-height: 1.85;
+  }
+
+  @media (max-width: 700px) {
+    .preview-catch { font-size: 36px; }
+    .preview-main { padding: 32px 20px; }
+    .fontmap-grid { grid-template-columns: 1fr; }
+    .preview-stats { flex-wrap: wrap; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="page-header">
+    <h1>4URL 完全再現フォント案・複数フォント使い分け版</h1>
+    <p>
+      1ページに使われているフォントの種類と役割を全て可視化した3案です。<br>
+      各案ともロゴ・ヘッドライン・本文・数字・お客様の声で**異なるフォントを使い分け**ています。
+    </p>
+    <div class="note">
+      <strong>重要な発見</strong>: fv045 の spc1_2 / spc2 / spc3 はフォント設計が完全同一（LIFF IDのみ差分）のため、4つの参考URLを再現する案は実質「A案=real045」「B案=fv045系」「E案=推奨ハイブリッド」の<strong>3パターン</strong>になります。
+    </div>
+  </div>
+
+  <!-- ===== A案: real045完全再現 ===== -->
+  <div class="case case-A">
+    <div class="case-header">
+      <span class="case-tag">CASE A</span>
+      <span class="case-title">real045 完全再現（SWELL Theme・游ゴシック）</span>
+    </div>
+    <div class="fontmap">
+      <div class="fontmap-title">FONT MAP</div>
+      <div class="fontmap-grid">
+        <div class="fontmap-row"><span class="fontmap-label">ロゴ</span><span>游ゴシック Bold</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">ヘッドライン</span><span>游ゴシック Bold</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">サブ</span><span>游ゴシック Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">本文</span><span>游ゴシック Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">強調・マーカー</span><span>游ゴシック Bold + 黄色蛍光</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">数字</span><span>-apple-system/Segoe UI Bold</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">声欄</span><span>游ゴシック Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">voice ラベル</span><span>-apple-system Bold</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <div class="preview-logo">Posca Art U</div>
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><span class="stat-num">10<span class="stat-unit">万人+</span></span><div class="stat-label">チャンネル登録者</div></div>
+          <div><span class="stat-num">1,000<span class="stat-unit">万回+</span></span><div class="stat-label">累計再生回数</div></div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-row"><span class="voice-label">voice 01</span><span class="voice-name">町田さん（専業主婦）</span></div>
+          <div class="voice-text"><span class="voice-quote-mark">"</span>過去の動画編集挫折から、ポスカアートで5ヶ月、月収43万円達成しました。</div>
+        </div>
+        <div class="preview-footnote">
+          <strong>印象</strong>: 親しみやすいプロフェッショナリズム。鳥海修「水のような書体」思想。<br>
+          <strong>フォント数</strong>: 1ファミリー（OS標準・Webフォント不要）<br>
+          <strong>適性</strong>: ブランディング型LP・読み心地最優先
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== B案: fv045完全再現 ===== -->
+  <div class="case case-B">
+    <div class="case-header">
+      <span class="case-tag">CASE B</span>
+      <span class="case-title">fv045（spc1_2/2/3 全部） 完全再現</span>
+    </div>
+    <div class="fontmap">
+      <div class="fontmap-title">FONT MAP</div>
+      <div class="fontmap-grid">
+        <div class="fontmap-row"><span class="fontmap-label">ロゴ</span><span>Klee One Semibold（手書き感）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">ヘッドライン</span><span>Zen Kaku Gothic New Black</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">サブ</span><span>Noto Sans JP Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">本文</span><span>Noto Sans JP Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">強調・マーカー</span><span>Zen Kaku Gothic New Black + 黄色マーカー</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">数字</span><span>Inter Black（和欧混植）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">声欄本文</span><span>Noto Sans JP Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">voice ラベル</span><span>Inter Bold</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <div class="preview-logo">Posca Art U</div>
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><span class="stat-num">10<span class="stat-unit">万人+</span></span><div class="stat-label">チャンネル登録者</div></div>
+          <div><span class="stat-num">1,000<span class="stat-unit">万回+</span></span><div class="stat-label">累計再生回数</div></div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-row"><span class="voice-label">voice 01</span><span class="voice-name">町田さん（専業主婦）</span></div>
+          <div class="voice-text"><span class="voice-quote-mark">"</span>過去の動画編集挫折から、ポスカアートで5ヶ月、月収43万円達成しました。</div>
+        </div>
+        <div class="preview-footnote">
+          <strong>印象</strong>: 商業的キレ・即決誘導。情報商材LP業界標準。<br>
+          <strong>フォント数</strong>: 4ファミリー（Zen Kaku Gothic New / Noto Sans JP / Inter / Klee One）<br>
+          <strong>適性</strong>: 広告流入CV最大化
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== E案: ハイブリッド（推奨） ===== -->
+  <div class="case case-E">
+    <div class="case-header">
+      <span class="case-tag">CASE E</span>
+      <span class="case-title">ハイブリッド推奨（real045の上品さ × fv045のキレ × アート）</span>
+      <span class="case-recommend">第一推奨</span>
+    </div>
+    <div class="fontmap">
+      <div class="fontmap-title">FONT MAP（12層使い分け）</div>
+      <div class="fontmap-grid">
+        <div class="fontmap-row"><span class="fontmap-label">ロゴ</span><span>Klee One Semibold（手書きアート感）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">カリギュラバー</span><span>Zen Kaku Gothic New Black</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">ヘッドライン</span><span>Zen Kaku Gothic New Black</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">サブキャッチ</span><span>Noto Sans JP Medium（柔らかさ）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">強調語・希少性</span><span>Zen Kaku Gothic New ExtraBold</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">セクションタイトル</span><span>Noto Sans JP Bold（落ち着き）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">本文</span><span>Noto Sans JP Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">数字</span><span>Inter Black + Noto Sans JP（和欧混植）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">講師名</span><span>Klee One Semibold（手書き感）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">お客様の声・名前</span><span>Klee One Semibold（信用性UP）</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">声・本文</span><span>Noto Sans JP Medium</span></div>
+        <div class="fontmap-row"><span class="fontmap-label">voice ラベル</span><span>Inter Bold（半角英数字）</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="preview-bar">
+        <span style="margin-right:6px">⚠</span>
+        <span class="hl">絵を描くこと・ものづくりが好きな方</span>
+        へ。このページをそのまま閉じないでください。
+      </div>
+      <div class="preview-main">
+        <div class="preview-logo">Posca Art U</div>
+        <span class="preview-eyebrow">POSCA ARTIST U</span>
+        <div class="preview-catch">好きなことを、<br><span class="marker">仕事にする。</span></div>
+        <div class="preview-sub">紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる働き方。</div>
+        <div class="preview-rare">日本ではほとんど知られていない、<strong>「ポスカアーティスト」</strong>という新しい働き方。</div>
+        <div class="preview-name">ポスカアーティスト&nbsp;&nbsp;U</div>
+        <div class="preview-stats">
+          <div><span class="stat-num">10<span class="stat-unit">万人+</span></span><div class="stat-label">チャンネル登録者</div></div>
+          <div><span class="stat-num">1,000<span class="stat-unit">万回+</span></span><div class="stat-label">累計再生回数</div></div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-row"><span class="voice-label">voice 01</span><span class="voice-name">町田さん（専業主婦）</span></div>
+          <div class="voice-text"><span class="voice-quote-mark">"</span>過去の動画編集挫折から、ポスカアートで5ヶ月、月収43万円達成しました。</div>
+        </div>
+        <div class="preview-footnote">
+          <strong>印象</strong>: 上品 × キレ × アート × 信頼の四重奏。<br>
+          <strong>フォント数</strong>: 4ファミリー（Zen Kaku Gothic New 800-900 + Noto Sans JP 400-700 + Inter 700-900 + Klee One 400-600）<br>
+          <strong>適性</strong>: 「絵を描く・物作りが好きな人」というアート寄りペルソナ × 広告流入対応の信頼性<br>
+          <strong>マーケ理論裏付け</strong>:<br>
+          ・ロゴ Klee One = アート性で個人ブランド記憶<br>
+          ・ヘッドライン Black 900 = 業界標準のキレ + カリギュラ効果増幅<br>
+          ・本文 Noto Sans JP Medium = 鳥海修「水のような書体」思想<br>
+          ・数字 Inter Black = 和欧混植で「客観性・信頼」科学的形成<br>
+          ・声欄 Klee One = 手書き感→信用性UP（業界標準心理戦略）
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

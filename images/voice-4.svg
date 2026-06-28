@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff0c8"/>
+      <stop offset="100%" stop-color="#f0d090"/>
+    </linearGradient>
+    <linearGradient id="skin4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fce4c8"/>
+      <stop offset="100%" stop-color="#e6c39a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#bg4)"/>
+  <path d="M 65 70 Q 65 45 100 45 Q 135 45 135 70 Q 138 90 132 100 L 70 100 Q 62 90 65 70 Z" fill="#3a2010"/>
+  <ellipse cx="100" cy="110" rx="33" ry="38" fill="url(#skin4)"/>
+  <ellipse cx="88" cy="108" rx="2.5" ry="4" fill="#2a1810"/>
+  <ellipse cx="112" cy="108" rx="2.5" ry="4" fill="#2a1810"/>
+  <path d="M 90 124 Q 100 130 110 124" stroke="#a04030" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="82" cy="116" r="3" fill="#f4a890" opacity="0.6"/>
+  <circle cx="118" cy="116" r="3" fill="#f4a890" opacity="0.6"/>
+  <path d="M 60 155 Q 65 145 100 145 Q 135 145 140 155 L 145 200 L 55 200 Z" fill="#5a7a8a"/>
+</svg>

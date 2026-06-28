@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8e0e8"/>
+      <stop offset="100%" stop-color="#e4b8c8"/>
+    </linearGradient>
+    <linearGradient id="skin5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fce4c8"/>
+      <stop offset="100%" stop-color="#e6c39a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#bg5)"/>
+  <path d="M 55 75 Q 55 40 100 40 Q 145 40 145 75 Q 150 110 145 145 L 140 130 Q 135 115 130 110 L 70 110 Q 65 115 60 130 L 55 145 Q 50 110 55 75 Z" fill="#2a1810"/>
+  <ellipse cx="100" cy="115" rx="33" ry="38" fill="url(#skin5)"/>
+  <ellipse cx="88" cy="113" rx="2.5" ry="4" fill="#2a1810"/>
+  <ellipse cx="112" cy="113" rx="2.5" ry="4" fill="#2a1810"/>
+  <path d="M 90 128 Q 100 134 110 128" stroke="#a04030" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="82" cy="121" r="3" fill="#f4a890" opacity="0.6"/>
+  <circle cx="118" cy="121" r="3" fill="#f4a890" opacity="0.6"/>
+  <path d="M 60 158 Q 65 148 100 148 Q 135 148 140 158 L 145 200 L 55 200 Z" fill="#c878a0"/>
+</svg>

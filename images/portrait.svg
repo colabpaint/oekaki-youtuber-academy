@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4ebd9"/>
+      <stop offset="100%" stop-color="#d4b896"/>
+    </linearGradient>
+    <linearGradient id="pskin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fce4c8"/>
+      <stop offset="100%" stop-color="#e6c39a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#pbg)"/>
+
+  <!-- 後ろの作品 -->
+  <rect x="60" y="80" width="170" height="220" fill="#fff" stroke="#5a3e26" stroke-width="6"/>
+  <circle cx="115" cy="170" r="35" fill="#ff8c42"/>
+  <circle cx="180" cy="160" r="28" fill="#4fb3d9"/>
+  <rect x="90" y="220" width="110" height="50" fill="#8fc66e" rx="5"/>
+
+  <rect x="370" y="80" width="170" height="220" fill="#fff" stroke="#5a3e26" stroke-width="6"/>
+  <ellipse cx="455" cy="170" rx="50" ry="40" fill="#e94560"/>
+  <rect x="395" y="220" width="120" height="50" fill="#f5c542" rx="5"/>
+
+  <!-- 中央の人物 -->
+  <!-- 胴体 -->
+  <path d="M 220 480 Q 220 420 300 420 Q 380 420 380 480 L 400 800 L 200 800 Z" fill="#2a3a4c"/>
+
+  <!-- 首 -->
+  <rect x="280" y="360" width="40" height="60" fill="url(#pskin)"/>
+
+  <!-- 頭 -->
+  <ellipse cx="300" cy="320" rx="80" ry="90" fill="url(#pskin)"/>
+
+  <!-- 髪 -->
+  <path d="M 220 280 Q 220 220 300 220 Q 380 220 380 280 Q 385 310 375 325 L 370 320 Q 370 290 365 280 L 235 280 Q 230 290 230 320 L 225 325 Q 215 310 220 280 Z" fill="#1a1208"/>
+  <!-- 前髪 -->
+  <path d="M 225 290 Q 240 280 270 285 Q 285 290 300 285 Q 320 290 335 285 Q 360 280 375 290 Q 370 295 350 296 Q 330 298 310 295 Q 290 297 270 298 Q 245 297 225 295 Z" fill="#1a1208"/>
+
+  <!-- 目 -->
+  <g>
+    <ellipse cx="278" cy="320" rx="6" ry="9" fill="#1a1208"/>
+    <ellipse cx="322" cy="320" rx="6" ry="9" fill="#1a1208"/>
+    <!-- 眉 -->
+    <path d="M 265 300 Q 278 295 290 300" stroke="#1a1208" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 310 300 Q 322 295 335 300" stroke="#1a1208" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- 鼻 -->
+  <path d="M 300 335 L 295 360 Q 300 365 305 360 Z" fill="#d4a576" opacity="0.5"/>
+
+  <!-- 口（穏やかな微笑み） -->
+  <path d="M 280 380 Q 300 388 320 380" stroke="#8a4030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- ほっぺ -->
+  <ellipse cx="260" cy="350" rx="10" ry="6" fill="#f4a890" opacity="0.4"/>
+  <ellipse cx="340" cy="350" rx="10" ry="6" fill="#f4a890" opacity="0.4"/>
+
+  <!-- 手にポスカ -->
+  <g transform="translate(310, 600) rotate(15)">
+    <rect x="0" y="0" width="20" height="80" fill="#ff8c42" rx="3"/>
+    <rect x="0" y="0" width="20" height="15" fill="#1a1a1a"/>
+  </g>
+  <!-- 右手 -->
+  <ellipse cx="330" cy="620" rx="22" ry="18" fill="url(#pskin)"/>
+
+  <!-- 仮素材注釈 -->
+  <text x="300" y="780" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#5a4a35" opacity="0.7">[ 仮 ] 講師ポートレート</text>
+</svg>

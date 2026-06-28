@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ヒーローモックアップ比較</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Yusei+Magic&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f4ede0;
+    padding: 30px;
+  }
+  h2 {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #1f1a14;
+    letter-spacing: 0.02em;
+  }
+  .caption {
+    font-size: 13px;
+    color: #6b6359;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+  .mock-section {
+    margin-bottom: 60px;
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  /* =============================
+     比較①: 現状（ダメな方）
+     ============================= */
+  .now-hero {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    background:
+      radial-gradient(circle at 90% 10%, rgba(255, 200, 130, 0.18) 0%, transparent 50%),
+      #fdfaf3;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 0 40px;
+    border-radius: 6px;
+    border: 1px solid #e5dcc9;
+  }
+  .now-deco-dots {
+    position: absolute;
+    top: 18%; left: 12%;
+    width: 120px; height: 120px;
+    background-image: radial-gradient(circle, #ee8a3c 1.6px, transparent 2px);
+    background-size: 14px 14px;
+    opacity: 0.35;
+  }
+  .now-deco-tri-1 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-top: 240px solid #ffd900;
+    border-right: 100px solid transparent;
+    opacity: 0.55;
+  }
+  .now-deco-tri-3 {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    border-bottom: 280px solid #ffd900;
+    border-left: 120px solid transparent;
+    opacity: 0.4;
+  }
+  .now-circle-1 {
+    position: absolute;
+    top: 20%; right: 4%;
+    width: 60px; height: 60px;
+    background: #ff9148;
+    opacity: 0.18;
+    border-radius: 50%;
+  }
+  .now-circle-2 {
+    position: absolute;
+    top: 70%; left: 50%;
+    width: 30px; height: 30px;
+    background: #06c755;
+    opacity: 0.3;
+    border-radius: 50%;
+  }
+  .now-circle-3 {
+    position: absolute;
+    top: 12%; right: 38%;
+    width: 18px; height: 18px;
+    background: #ffd900;
+    opacity: 0.7;
+    border-radius: 50%;
+  }
+  .now-text {
+    position: relative;
+    z-index: 1;
+  }
+  .now-text h1 {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 44px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    color: #1f1a14;
+  }
+  .now-text h1 .em {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+  }
+  .now-text h1 .em::after {
+    content: "";
+    position: absolute;
+    left: -2%; bottom: 0;
+    width: 104%; height: 30%;
+    background: #ffe9a0;
+    z-index: -1;
+  }
+  .now-text p {
+    font-size: 12px;
+    color: #6b6359;
+    line-height: 1.8;
+  }
+  .now-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 2;
+  }
+  .now-blob {
+    position: absolute;
+    top: 8%; left: 5%;
+    width: 90%; height: 90%;
+    background: radial-gradient(circle at 40% 40%, #ffd089 0%, #ff9148 35%, #ff9148 50%, transparent 75%);
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.85;
+    z-index: 0;
+  }
+  .now-blob-2 {
+    position: absolute;
+    top: 18%; left: 18%;
+    width: 70%; height: 70%;
+    background: radial-gradient(circle at 60% 40%, #fff0d4 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .now-portrait {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 18px 24px rgba(60,40,20,0.18));
+  }
+  .now-star {
+    position: absolute;
+    z-index: 4;
+    line-height: 1;
+  }
+  .now-s1 { top: 8%; left: 8%; color: #ee8a3c; font-size: 24px; }
+  .now-s2 { top: 22%; right: 6%; color: #ffd900; font-size: 28px; }
+  .now-s3 { top: 55%; left: 2%; color: #06c755; font-size: 16px; }
+  .now-s4 { top: 70%; right: 10%; color: #c46322; font-size: 18px; }
+
+  /* =============================
+     比較②: real045 風（正解）
+     ============================= */
+  .real-hero {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    background: #ffffff;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 0 40px;
+    border-radius: 6px;
+    border: 1px solid #e5dcc9;
+  }
+  /* 左端の斜めライン2本 */
+  .real-line-left-1 {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 40px;
+    background: #ffd900;
+    transform: skewX(-10deg) translateX(-25px);
+    z-index: 0;
+  }
+  .real-line-left-2 {
+    position: absolute;
+    top: 0; bottom: 0; left: 30px;
+    width: 8px;
+    background: #ffd900;
+    transform: skewX(-10deg);
+    opacity: 0.7;
+    z-index: 0;
+  }
+  /* 右端の斜めライン2本 */
+  .real-line-right-1 {
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 40px;
+    background: #ffd900;
+    transform: skewX(-10deg) translateX(25px);
+    z-index: 0;
+  }
+  .real-line-right-2 {
+    position: absolute;
+    top: 0; bottom: 0; right: 30px;
+    width: 8px;
+    background: #ffd900;
+    transform: skewX(-10deg);
+    opacity: 0.7;
+    z-index: 0;
+  }
+  .real-text {
+    position: relative;
+    z-index: 1;
+    padding-left: 30px;
+  }
+  /* 上のラベル: 月収300万以上 SNEAKERS PAINT 風 */
+  .real-toplabel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+  }
+  .real-toplabel .badge-num {
+    font-size: 24px;
+    font-weight: 900;
+    color: transparent;
+    background: linear-gradient(180deg, #4fb3e5 0%, #2a72a8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow:
+      -1.5px -1.5px 0 #1a1a1a,
+      1.5px -1.5px 0 #1a1a1a,
+      -1.5px 1.5px 0 #1a1a1a,
+      1.5px 1.5px 0 #1a1a1a;
+    letter-spacing: -0.02em;
+  }
+  .real-toplabel .label-small {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 0.02em;
+  }
+  .real-toplabel .label-en {
+    font-size: 14px;
+    font-weight: 900;
+    color: #1a1a1a;
+    letter-spacing: 0.15em;
+    margin-left: auto;
+  }
+  /* 3行の白枠ボックス（real045の心臓部） */
+  .real-box-row {
+    background: #ffffff;
+    border: 2.5px solid #1a1a1a;
+    padding: 6px 14px;
+    margin-bottom: 6px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #1a1a1a;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+  .real-box-row .orange {
+    color: #ee8a3c;
+  }
+  /* 縦書きの「5年連続」 */
+  .real-side {
+    position: absolute;
+    top: 20px;
+    left: 70px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: #1a1a1a;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.1em;
+    z-index: 2;
+  }
+  /* 右側の人物 */
+  .real-visual {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .real-portrait {
+    height: 110%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom;
+  }
+
+  /* 注釈 */
+  .note {
+    background: #fff8e0;
+    border-left: 4px solid #ffd900;
+    padding: 14px 18px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #5a4a35;
+    line-height: 1.8;
+    border-radius: 4px;
+  }
+  .note strong { color: #c46322; }
+  .compare-arrow {
+    text-align: center;
+    font-size: 40px;
+    color: #ee8a3c;
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+  <div class="mock-section">
+    <h2>① 今のページ（直前の私の実装）</h2>
+    <p class="caption">オレンジのブロブ、★浮遊、ドット模様、装飾円が大量に乗っている状態</p>
+
+    <div class="now-hero">
+      <span class="now-deco-tri-1"></span>
+      <span class="now-deco-tri-3"></span>
+      <span class="now-deco-dots"></span>
+      <span class="now-circle-1"></span>
+      <span class="now-circle-2"></span>
+      <span class="now-circle-3"></span>
+
+      <div class="now-text">
+        <h1>描くことで、<br><span class="em">生きていく。</span></h1>
+        <p>紙とポスカと、スマホ一台で。<br>言葉を使わず、世界とつながる<br>新しい働き方を、お伝えしています。</p>
+      </div>
+      <div class="now-visual">
+        <div class="now-blob"></div>
+        <div class="now-blob-2"></div>
+        <img src="images/portrait-transparent.png" alt="" class="now-portrait">
+        <span class="now-star now-s1">★</span>
+        <span class="now-star now-s2">✦</span>
+        <span class="now-star now-s3">●</span>
+        <span class="now-star now-s4">★</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>問題点：</strong><br>
+      • 人物の後ろのオレンジ「光ってる」ブロブ ← real045 に存在しない<br>
+      • 浮遊する ★ ✦ ●（4つ） ← real045 に存在しない<br>
+      • 左上のオレンジ点々模様（ドット） ← real045 に存在しない<br>
+      • 3つの装飾円 ← real045 に存在しない<br>
+      <strong>→ 私が勝手に「ポップ感」と勘違いして足した装飾</strong>
+    </div>
+  </div>
+
+  <div class="compare-arrow">↓ 正解はこっち ↓</div>
+
+  <div class="mock-section">
+    <h2>② real045 風（正解）</h2>
+    <p class="caption">背景は完全に白。左右に細い黄色の斜めライン2本だけ。コピーは黒い太枠の白ボックスを縦に3つ並べる。</p>
+
+    <div class="real-hero">
+      <!-- 左端の黄色斜めライン -->
+      <span class="real-line-left-1"></span>
+      <span class="real-line-left-2"></span>
+      <!-- 右端の黄色斜めライン -->
+      <span class="real-line-right-1"></span>
+      <span class="real-line-right-2"></span>
+
+      <!-- 縦書きの「5年連続」風 -->
+      <div class="real-side">日本初挑戦</div>
+
+      <div class="real-text">
+        <div class="real-toplabel">
+          <span class="badge-num">300</span>
+          <span class="label-small">万再生 突破</span>
+          <span class="label-en">POSCA ART U</span>
+        </div>
+
+        <div class="real-box-row">
+          <span class="orange">日本初</span> 楽しみながら稼げる
+        </div>
+        <div class="real-box-row">
+          <span class="orange">ポスカアート</span> という
+        </div>
+        <div class="real-box-row">
+          <span class="orange">働き方</span> を発信中
+        </div>
+      </div>
+
+      <div class="real-visual">
+        <img src="images/portrait-transparent.png" alt="" class="real-portrait">
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>real045 の実際の構成要素（実際の画像から確認）：</strong><br>
+      ✅ 完全な白い背景<br>
+      ✅ 左端：細い黄色の斜めライン（縦に貫通・2本くらい）<br>
+      ✅ 右端：細い黄色の斜めライン（同上）<br>
+      ✅ 中央：白い長方形ボックス（黒い太枠）を縦に3つ並べる<br>
+      ✅ 各ボックス内：黒文字 + オレンジ強調<br>
+      ✅ 左：縦書きで「5年連続」<br>
+      ✅ 右：切り抜き人物（背景透明）<br>
+      <strong>→ ドット・★・円・ブロブ・グラデは「一切ない」</strong>
+    </div>
+  </div>
+
+</body>
+</html>
